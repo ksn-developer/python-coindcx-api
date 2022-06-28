@@ -3,8 +3,7 @@ import time
 import hmac
 import hashlib
 import json
-import pdb
-import pprint
+
 
 BASE_URL = "https://api.coindcx.com"
 PUBLIC_API_BASE_URL = "https://public.coindcx.com"
