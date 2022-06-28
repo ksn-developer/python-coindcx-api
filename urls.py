@@ -1,8 +1,9 @@
-import requests # Install requests module first
-import time
+import requests 
 import hmac
 import hashlib
 import json
+import time
+
 
 
 BASE_URL = "https://api.coindcx.com"
