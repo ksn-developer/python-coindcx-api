@@ -34,12 +34,3 @@ FETCH_ORDER="/exchange/v1/margin/fetch_orders"
 QUERY_ORDER="/exchange/v1/margin/order"
 
 
-def get_secret_bytes(secret):
-    return bytes(secret,'utf-8')
-
-def generate_timeStamp():
-    return int(round(time.time()* 1000))
-
-def generate_signature(secret_bytes,json_body):
-    return hmac.new(secret_bytes, json_body.encode(), hashlib.sha256).hexdigest()
-
