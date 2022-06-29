@@ -86,7 +86,7 @@ class Api:
         timeStamp = self.generate_timeStamp()
         length  = 10
         letters = string.ascii_lowercase
-        order_id = ''.join(random.choice(length) for i in range(length))
+        order_id = ''.join(random.choice(letters) for i in range(length))
         body = {
           "side":side,    #Toggle between 'buy' or 'sell'.
           "order_type": order_type, #Toggle between a 'market_order' or 'limit_order'.
