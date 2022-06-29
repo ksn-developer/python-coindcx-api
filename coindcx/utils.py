@@ -5,10 +5,9 @@ import hashlib
 import datetime 
 import time, math
 from datetime import timedelta
+import pandas as pd
 import requests
 
-def prettyprint_json(json_data):
-    pprint.pprint(json_data)
 
 def get_secret_bytes(secret):
     return bytes(secret,'utf-8')
@@ -26,20 +25,38 @@ def generate_date_time(days):
     """ create a date prior to current date """
     now = datetime.datetime.now()
     date = (now - timedelta(days = days)).strftime("%d %m %Y %H:%M:%S")
-    date
+    return date
 
 
 def to_datetime_object(date_time_string):
     datetime_data = time.strptime(date_time_string, "%d %m %Y %H:%M:%S")
-    timestamp = time.mktime(datetime_data)
-    #date_time_object = date_time_string_to_time(datetime_data)
-     
-    my_datetime = datetime.datetime.fromtimestamp(timestamp)
+    timestamp = time.mktime(datetime_data)     
+    datetime_obj = datetime.datetime.fromtimestamp(timestamp)
     
-    return my_datetime
+    return datetime_obj
+
+def json_to_dframe(json_data):
+    df = pd.json_normalize(json_data)
+    return df
+
+def list_to_dframe(list_data):
+    """ accepts a list of dicts and returns a dataframe 
+        example: api = Api()
+        tickers = api.get_ticker()
+        dataframe = list_to_dframe(tickers)
+    """
+    df = pd.DataFrame(list_data)
+    return df
+
+def list_to_dframe(dict_data):
+    df=pd.DataFrame.from_dict(dict_data, orient='index')
+    return df
+
+def prettyprint_json(json_data):
+    pprint.pprint(json_data)
 
 
-def coindcx_urls(startDate, endDate, token, interval):
+def get_coindcx_url(startDate, endDate, token, interval):
 
     urls_to_scrape = list()
 

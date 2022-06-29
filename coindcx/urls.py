@@ -5,7 +5,6 @@ import json
 import time
 
 
-
 BASE_URL = "https://api.coindcx.com"
 PUBLIC_API_BASE_URL = "https://public.coindcx.com"
 
