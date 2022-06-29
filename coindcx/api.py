@@ -148,6 +148,12 @@ class Api:
         response = requests.post(url, json_body, headers)
         return response
 
+    def get_secret(self):
+        return self.secret
+
+    def get_key(self):
+        return self.key
+
 
 
     def make_headers(self):
