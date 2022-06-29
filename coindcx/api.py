@@ -11,7 +11,6 @@ import random
 import string
 import pandas as pd
 
-from coindcx.request import Request
 from coindcx.urls import(
     BASE_URL,
     USER,
