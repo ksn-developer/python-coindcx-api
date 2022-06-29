@@ -90,7 +90,7 @@ class Api:
         body = {
           "side":side,    #Toggle between 'buy' or 'sell'.
           "order_type": order_type, #Toggle between a 'market_order' or 'limit_order'.
-          "market": market, #Replace 'SNTBTC' with your desired market pair.
+          "market": market, 
           "price_per_unit":price_per_unit, #This parameter is only required for a 'limit_order'
           "total_quantity": total_quantity, #Replace this with the quantity you want
           "timestamp": timeStamp,
